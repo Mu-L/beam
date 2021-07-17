@@ -40,7 +40,7 @@ const (
 	URNGBK           = "beam:transform:group_by_key:v1"
 	URNReshuffle     = "beam:transform:reshuffle:v1"
 	URNCombinePerKey = "beam:transform:combine_per_key:v1"
-	URNWindow        = "beam:transform:window:v1"
+	URNWindow        = "beam:transform:window_into:v1"
 
 	// URNIterableSideInput = "beam:side_input:iterable:v1"
 	URNMultimapSideInput = "beam:side_input:multimap:v1"
@@ -1036,10 +1036,10 @@ func makeWindowCoder(w *window.Fn) (*coder.WindowCoder, error) {
 	switch w.Kind {
 	case window.GlobalWindows:
 		return coder.NewGlobalWindow(), nil
-	case window.FixedWindows, window.SlidingWindows, URNSlidingWindowsWindowFn:
+	case window.FixedWindows, window.SlidingWindows, window.Sessions, URNSlidingWindowsWindowFn:
 		return coder.NewIntervalWindow(), nil
 	default:
-		return nil, errors.Errorf("unexpected windowing strategy: %v", w)
+		return nil, errors.Errorf("unexpected windowing strategy for coder: %v", w)
 	}
 }
 
