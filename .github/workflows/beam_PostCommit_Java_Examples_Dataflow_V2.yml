@@ -77,7 +77,7 @@ jobs:
             gradle-command: :runners:google-cloud-dataflow-java:examplesJavaRunnerV2IntegrationTest
             max-workers: 12
       - name: Archive JUnit Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: JUnit Test Results

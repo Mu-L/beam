@@ -76,7 +76,7 @@ jobs:
         with:
           gradle-command: :sdks:java:javadoc:aggregateJavadoc
       - name: Upload Javadoc Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Javadoc Results
           path: '**/sdks/java/javadoc/build/docs/javadoc/**'
