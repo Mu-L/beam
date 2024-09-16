@@ -35,7 +35,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/credentials v1.13.38
 	github.com/aws/aws-sdk-go-v2/feature/s3/manager v1.11.84
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.38.5
-	github.com/aws/smithy-go v1.14.2
+	github.com/aws/smithy-go v1.20.4
 	github.com/docker/go-connections v0.4.0
 	github.com/dustin/go-humanize v1.0.1
 	github.com/go-sql-driver/mysql v1.7.1
